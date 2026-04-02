@@ -1,0 +1,36 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='d2site.testimonialcarousel'}"/>
+    <sly data-sly-call="${clientlib.js @ categories='d2site.testimonialcarousel'}"/>
+</sly>
+<div class="cmp-testimonialcarousel" data-cmp-is="testimonialcarousel"
+     data-sly-use.model="com.d2.core.models.TestimonialCarouselModel"
+     data-sly-test="${model.items}">
+
+    <div class="cmp-testimonialcarousel__slides">
+        <div data-sly-list.testimonial="${model.items}"
+             class="cmp-testimonialcarousel__slide${itemList.index == 0 ? ' cmp-testimonialcarousel__slide--active' : ''}"
+             data-slide-index="${itemList.index}">
+
+            <div class="cmp-testimonialcarousel__photo" data-sly-test="${testimonial.authorPhoto}">
+                <img src="${testimonial.authorPhoto}" alt="${testimonial.authorName || 'Author photo'}"/>
+            </div>
+
+            <blockquote class="cmp-testimonialcarousel__quote" data-sly-test="${testimonial.quoteText}">
+                ${testimonial.quoteText}
+            </blockquote>
+
+            <p class="cmp-testimonialcarousel__author" data-sly-test="${testimonial.authorName}">
+                ${testimonial.authorName}
+            </p>
+
+            <p class="cmp-testimonialcarousel__designation" data-sly-test="${testimonial.designation}">
+                ${testimonial.designation}
+            </p>
+        </div>
+    </div>
+
+    <div class="cmp-testimonialcarousel__nav" data-sly-test="${model.items.size > 1}">
+        <button class="cmp-testimonialcarousel__prev" type="button" aria-label="Previous testimonial">&#8249;</button>
+        <button class="cmp-testimonialcarousel__next" type="button" aria-label="Next testimonial">&#8250;</button>
+    </div>
+</div>

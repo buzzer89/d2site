@@ -1,0 +1,95 @@
+.cmp-testimonialcarousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.cmp-testimonialcarousel__slides {
+    position: relative;
+    overflow: hidden;
+}
+
+.cmp-testimonialcarousel__slide {
+    display: none;
+    padding: 1.5rem;
+}
+
+.cmp-testimonialcarousel__slide--active {
+    display: block;
+}
+
+.cmp-testimonialcarousel__photo {
+    margin-bottom: 1.5rem;
+}
+
+.cmp-testimonialcarousel__photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cmp-testimonialcarousel__quote {
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    border: none;
+    color: #333;
+}
+
+.cmp-testimonialcarousel__quote::before {
+    content: "\201C";
+    font-size: 2rem;
+    color: #999;
+}
+
+.cmp-testimonialcarousel__quote::after {
+    content: "\201D";
+    font-size: 2rem;
+    color: #999;
+}
+
+.cmp-testimonialcarousel__author {
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+    color: #222;
+}
+
+.cmp-testimonialcarousel__designation {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.cmp-testimonialcarousel__nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cmp-testimonialcarousel__prev,
+.cmp-testimonialcarousel__next {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.cmp-testimonialcarousel__prev:hover,
+.cmp-testimonialcarousel__next:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
