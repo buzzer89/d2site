@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Column Control Component — Responsive Layout
+   Breakpoints match existing grid.less: phone ≤768px, tablet 769-1200px
+   ========================================================================== */
+
+.cmp-columncontrol {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 -12px;
+}
+
+.cmp-columncontrol__column {
+    box-sizing: border-box;
+    padding: 0 12px;
+    min-height: 80px;
+    position: relative;
+    min-width: 0;
+}
+
+/* --- 1 Column (Full Width) --- */
+.cmp-columncontrol--1col > .cmp-columncontrol__column {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* --- 2 Columns (50% / 50%) --- */
+.cmp-columncontrol--2col > .cmp-columncontrol__column {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+/* --- 3 Columns (33.33% each) --- */
+.cmp-columncontrol--3col > .cmp-columncontrol__column {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+}
+
+/* --- 4 Columns (25% each) --- */
+.cmp-columncontrol--4col > .cmp-columncontrol__column {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+/* --- Tablet: 3+ columns collapse to 2-per-row --- */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .cmp-columncontrol--3col > .cmp-columncontrol__column,
+    .cmp-columncontrol--4col > .cmp-columncontrol__column {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* --- Phone: all layouts stack to single column --- */
+@media (max-width: 768px) {
+    .cmp-columncontrol__column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

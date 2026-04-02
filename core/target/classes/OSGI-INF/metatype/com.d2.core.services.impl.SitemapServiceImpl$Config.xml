@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="OSGI-INF/l10n/com.d2.core.services.impl.SitemapServiceImpl$Config">
+  <OCD id="com.d2.core.services.impl.SitemapServiceImpl$Config" name="Sitemap Service Configuration" description="Configuration for the Sitemap XML generator">
+    <AD id="externalDomain" type="String" name="External Domain" description="The externally accessible domain, e.g. https://www.example.com" default="http://localhost:4503"/>
+    <AD id="includeUnpublished" type="Boolean" name="Include Unpublished Pages" description="If true, includes all non-hidden pages regardless of replication status" default="false"/>
+  </OCD>
+  <Designate pid="com.d2.core.services.impl.SitemapServiceImpl">
+    <Object ocdref="com.d2.core.services.impl.SitemapServiceImpl$Config"/>
+  </Designate>
+</metatype:MetaData>

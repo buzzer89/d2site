@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Agent Test - Column Control"
+        cq:template="/conf/d2site/settings/wcm/templates/page-content"
+        sling:resourceType="d2site/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="d2site/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="d2site/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="d2site/components/container"
+                    layout="responsiveGrid">
+
+                    <!-- Instance 1: 2 Columns layout -->
+                    <columncontrol_2col
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="2"/>
+
+                    <!-- Instance 2: 4 Columns layout -->
+                    <columncontrol_4col
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="4"/>
+
+                    <!-- Instance 3: Empty / default (edge case) -->
+                    <columncontrol_empty
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"/>
+
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

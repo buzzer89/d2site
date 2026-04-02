@@ -1,0 +1,10 @@
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/servlets/SitemapServletTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/filters/LoggingFilterTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/servlets/SimpleServletTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/testcontext/AppAemContext.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/schedulers/SimpleScheduledTaskTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/models/ContentTileModelTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/listeners/SimpleResourceListenerTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/models/ColumnControlModelTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/services/impl/SitemapServiceImplTest.java
+/Users/pradeep/Desktop/Code/aem-dota2/d2site/core/src/test/java/com/d2/core/models/HelloWorldModelTest.java
