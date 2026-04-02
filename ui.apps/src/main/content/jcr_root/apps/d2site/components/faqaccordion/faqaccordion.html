@@ -1,0 +1,23 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='d2site.faqaccordion'}"/>
+</sly>
+<div data-cmp-is="faqaccordion"
+     data-sly-use.model="com.d2.core.models.FaqAccordionModel"
+     data-sly-test="${model && !model.empty}"
+     class="cmp-faqaccordion">
+    <div class="cmp-faqaccordion__controls">
+        <button class="cmp-faqaccordion__expand-all" type="button">Expand All</button>
+        <button class="cmp-faqaccordion__collapse-all" type="button">Collapse All</button>
+    </div>
+    <div class="cmp-faqaccordion__list">
+        <div data-sly-list.item="${model.items}" class="cmp-faqaccordion__item">
+            <button class="cmp-faqaccordion__question" type="button" aria-expanded="false">
+                ${item.question}
+            </button>
+            <div class="cmp-faqaccordion__answer" hidden>
+                ${item.answer @ context='html'}
+            </div>
+        </div>
+    </div>
+</div>
+<sly data-sly-call="${clientlib.js @ categories='d2site.faqaccordion'}"/>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="FAQ Accordion Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <faqItems
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="FAQ Items"
+                        composite="{Boolean}true">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./faqItems">
+                            <items jcr:primaryType="nt:unstructured">
+                                <question
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Question"
+                                    fieldDescription="Enter the FAQ question"
+                                    name="./question"
+                                    required="{Boolean}true"/>
+                                <answer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                    fieldLabel="Answer"
+                                    fieldDescription="Enter the FAQ answer (supports rich text)"
+                                    name="./answer"
+                                    useFixedInlineToolbar="{Boolean}true">
+                                    <rtePlugins jcr:primaryType="nt:unstructured">
+                                        <format
+                                            jcr:primaryType="nt:unstructured"
+                                            features="bold,italic,underline"/>
+                                        <justify
+                                            jcr:primaryType="nt:unstructured"
+                                            features="-"/>
+                                        <links
+                                            jcr:primaryType="nt:unstructured"
+                                            features="modifylink,unlink"/>
+                                        <lists
+                                            jcr:primaryType="nt:unstructured"
+                                            features="ordered,unordered"/>
+                                    </rtePlugins>
+                                    <uiSettings jcr:primaryType="nt:unstructured">
+                                        <cui jcr:primaryType="nt:unstructured">
+                                            <inline
+                                                jcr:primaryType="nt:unstructured"
+                                                toolbar="[format#bold,format#italic,format#underline,-,links#modifylink,links#unlink,-,lists#unordered,lists#ordered]"/>
+                                        </cui>
+                                    </uiSettings>
+                                </answer>
+                            </items>
+                        </field>
+                    </faqItems>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>
