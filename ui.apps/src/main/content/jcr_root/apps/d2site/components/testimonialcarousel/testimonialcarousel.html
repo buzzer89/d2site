@@ -7,9 +7,9 @@
      data-sly-test="${model.items}">
 
     <div class="cmp-testimonialcarousel__slides">
-        <div data-sly-list.testimonial="${model.items}"
-             class="cmp-testimonialcarousel__slide${itemList.index == 0 ? ' cmp-testimonialcarousel__slide--active' : ''}"
-             data-slide-index="${itemList.index}">
+        <div data-sly-repeat.testimonial="${model.items}"
+             class="cmp-testimonialcarousel__slide${testimonialList.index == 0 ? ' cmp-testimonialcarousel__slide--active' : ''}"
+             data-slide-index="${testimonialList.index}">
 
             <div class="cmp-testimonialcarousel__photo" data-sly-test="${testimonial.authorPhoto}">
                 <img src="${testimonial.authorPhoto}" alt="${testimonial.authorName || 'Author photo'}"/>
