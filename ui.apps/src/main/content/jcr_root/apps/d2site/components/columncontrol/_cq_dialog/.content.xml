@@ -42,7 +42,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                         fieldLabel="Column Padding"
-                        fieldDescription="Set inner padding for each column"
+                        fieldDescription="Padding inside each column"
                         name="./columnPadding">
                         <items jcr:primaryType="nt:unstructured">
                             <none
@@ -52,15 +52,15 @@
                                 selected="{Boolean}true"/>
                             <small
                                 jcr:primaryType="nt:unstructured"
-                                text="Small"
+                                text="Small - 8px"
                                 value="small"/>
                             <medium
                                 jcr:primaryType="nt:unstructured"
-                                text="Medium"
+                                text="Medium - 16px"
                                 value="medium"/>
                             <large
                                 jcr:primaryType="nt:unstructured"
-                                text="Large"
+                                text="Large - 32px"
                                 value="large"/>
                         </items>
                     </columnPadding>
@@ -68,7 +68,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                         fieldLabel="Column Gap"
-                        fieldDescription="Set the gutter between columns"
+                        fieldDescription="Spacing between columns"
                         name="./columnGap">
                         <items jcr:primaryType="nt:unstructured">
                             <none
@@ -78,15 +78,15 @@
                                 selected="{Boolean}true"/>
                             <small
                                 jcr:primaryType="nt:unstructured"
-                                text="Small"
+                                text="Small - 8px"
                                 value="small"/>
                             <medium
                                 jcr:primaryType="nt:unstructured"
-                                text="Medium"
+                                text="Medium - 16px"
                                 value="medium"/>
                             <large
                                 jcr:primaryType="nt:unstructured"
-                                text="Large"
+                                text="Large - 32px"
                                 value="large"/>
                         </items>
                     </columnGap>

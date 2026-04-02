@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Agent Test - Column Padding and Margin"
+        cq:template="/conf/d2site/settings/wcm/templates/page-content"
+        sling:resourceType="d2site/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="d2site/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="d2site/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="d2site/components/container"
+                    layout="responsiveGrid">
+
+                    <!-- Default (no padding, no gap) — backward compatible -->
+                    <columncontrol_default
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="2"/>
+
+                    <!-- Padding small + Gap small -->
+                    <columncontrol_small
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="3"
+                        columnPadding="small"
+                        columnGap="small"/>
+
+                    <!-- Padding medium + Gap medium -->
+                    <columncontrol_medium
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="2"
+                        columnPadding="medium"
+                        columnGap="medium"/>
+
+                    <!-- Padding large + Gap large -->
+                    <columncontrol_large
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="4"
+                        columnPadding="large"
+                        columnGap="large"/>
+
+                    <!-- Only padding, no gap -->
+                    <columncontrol_padonly
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="2"
+                        columnPadding="medium"/>
+
+                    <!-- Only gap, no padding -->
+                    <columncontrol_gaponly
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/columncontrol"
+                        layout="2"
+                        columnGap="large"/>
+
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
