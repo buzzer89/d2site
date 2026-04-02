@@ -58,3 +58,16 @@
         max-width: 100%;
     }
 }
+
+/* --- Column Padding Utilities --- */
+.cmp-columncontrol--padding-small .cmp-columncontrol__column { padding-top: 8px; padding-bottom: 8px; }
+.cmp-columncontrol--padding-medium .cmp-columncontrol__column { padding-top: 16px; padding-bottom: 16px; }
+.cmp-columncontrol--padding-large .cmp-columncontrol__column { padding-top: 32px; padding-bottom: 32px; }
+
+/* --- Column Gap Utilities --- */
+.cmp-columncontrol--gap-small { margin: 0 -4px; }
+.cmp-columncontrol--gap-small > .cmp-columncontrol__column { padding-left: 4px; padding-right: 4px; }
+.cmp-columncontrol--gap-medium { margin: 0 -8px; }
+.cmp-columncontrol--gap-medium > .cmp-columncontrol__column { padding-left: 8px; padding-right: 8px; }
+.cmp-columncontrol--gap-large { margin: 0 -16px; }
+.cmp-columncontrol--gap-large > .cmp-columncontrol__column { padding-left: 16px; padding-right: 16px; }

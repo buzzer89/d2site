@@ -38,6 +38,58 @@
                                 value="4"/>
                         </items>
                     </layout>
+                    <columnPadding
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Column Padding"
+                        fieldDescription="Padding inside each column"
+                        name="./columnPadding">
+                        <items jcr:primaryType="nt:unstructured">
+                            <none
+                                jcr:primaryType="nt:unstructured"
+                                text="None"
+                                value="none"
+                                selected="{Boolean}true"/>
+                            <small
+                                jcr:primaryType="nt:unstructured"
+                                text="Small - 8px"
+                                value="small"/>
+                            <medium
+                                jcr:primaryType="nt:unstructured"
+                                text="Medium - 16px"
+                                value="medium"/>
+                            <large
+                                jcr:primaryType="nt:unstructured"
+                                text="Large - 32px"
+                                value="large"/>
+                        </items>
+                    </columnPadding>
+                    <columnGap
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Column Gap"
+                        fieldDescription="Spacing between columns"
+                        name="./columnGap">
+                        <items jcr:primaryType="nt:unstructured">
+                            <none
+                                jcr:primaryType="nt:unstructured"
+                                text="None"
+                                value="none"
+                                selected="{Boolean}true"/>
+                            <small
+                                jcr:primaryType="nt:unstructured"
+                                text="Small - 8px"
+                                value="small"/>
+                            <medium
+                                jcr:primaryType="nt:unstructured"
+                                text="Medium - 16px"
+                                value="medium"/>
+                            <large
+                                jcr:primaryType="nt:unstructured"
+                                text="Large - 32px"
+                                value="large"/>
+                        </items>
+                    </columnGap>
                 </items>
             </column>
         </items>

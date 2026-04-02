@@ -148,4 +148,88 @@ class ColumnControlModelTest {
         assertEquals(1, model.getColumnCount());
         assertEquals(1, model.getColumnNames().size());
     }
+
+    @Test
+    void testDefaultPadding() {
+        Resource resource = context.create().resource(page, "colctrl-pad-default",
+            "sling:resourceType", "d2site/components/columncontrol",
+            "layout", "2");
+
+        ColumnControlModel model = resource.adaptTo(ColumnControlModel.class);
+
+        assertNotNull(model);
+        assertEquals("none", model.getColumnPadding());
+        assertFalse(model.getCssClass().contains("padding"));
+    }
+
+    @Test
+    void testDefaultGap() {
+        Resource resource = context.create().resource(page, "colctrl-gap-default",
+            "sling:resourceType", "d2site/components/columncontrol",
+            "layout", "2");
+
+        ColumnControlModel model = resource.adaptTo(ColumnControlModel.class);
+
+        assertNotNull(model);
+        assertEquals("none", model.getColumnGap());
+        assertFalse(model.getCssClass().contains("gap"));
+    }
+
+    @Test
+    void testPaddingSmall() {
+        Resource resource = context.create().resource(page, "colctrl-pad-small",
+            "sling:resourceType", "d2site/components/columncontrol",
+            "layout", "2",
+            "columnPadding", "small");
+
+        ColumnControlModel model = resource.adaptTo(ColumnControlModel.class);
+
+        assertNotNull(model);
+        assertEquals("small", model.getColumnPadding());
+        assertTrue(model.getCssClass().contains("cmp-columncontrol--padding-small"));
+    }
+
+    @Test
+    void testGapMedium() {
+        Resource resource = context.create().resource(page, "colctrl-gap-medium",
+            "sling:resourceType", "d2site/components/columncontrol",
+            "layout", "3",
+            "columnGap", "medium");
+
+        ColumnControlModel model = resource.adaptTo(ColumnControlModel.class);
+
+        assertNotNull(model);
+        assertEquals("medium", model.getColumnGap());
+        assertTrue(model.getCssClass().contains("cmp-columncontrol--gap-medium"));
+    }
+
+    @Test
+    void testCombinedPaddingAndGap() {
+        Resource resource = context.create().resource(page, "colctrl-pad-gap",
+            "sling:resourceType", "d2site/components/columncontrol",
+            "layout", "4",
+            "columnPadding", "large",
+            "columnGap", "small");
+
+        ColumnControlModel model = resource.adaptTo(ColumnControlModel.class);
+
+        assertNotNull(model);
+        assertEquals("large", model.getColumnPadding());
+        assertEquals("small", model.getColumnGap());
+        String css = model.getCssClass();
+        assertTrue(css.contains("cmp-columncontrol--padding-large"));
+        assertTrue(css.contains("cmp-columncontrol--gap-small"));
+    }
+
+    @Test
+    void testBackwardCompatibility() {
+        Resource resource = context.create().resource(page, "colctrl-compat",
+            "sling:resourceType", "d2site/components/columncontrol",
+            "layout", "2");
+
+        ColumnControlModel model = resource.adaptTo(ColumnControlModel.class);
+
+        assertNotNull(model);
+        assertEquals("cmp-columncontrol cmp-columncontrol--2col", model.getCssClass());
+    }
 }
