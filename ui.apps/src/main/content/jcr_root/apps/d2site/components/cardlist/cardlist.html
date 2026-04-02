@@ -1,0 +1,19 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='d2site.cardlist'}"/>
+</sly>
+<div data-cmp-is="cardlist"
+     data-sly-use.model="com.d2.core.models.CardListModel"
+     data-sly-test="${model.items}"
+     class="${model.cssClass}">
+    <div class="cmp-cardlist__card" data-sly-list.card="${model.items}">
+        <div class="cmp-cardlist__image" data-sly-test="${card.imagePath}">
+            <img src="${card.imagePath}" alt="${card.title || ''}"/>
+        </div>
+        <h3 class="cmp-cardlist__title" data-sly-test="${card.title}">${card.title}</h3>
+        <p class="cmp-cardlist__description" data-sly-test="${card.description}">${card.description}</p>
+        <a class="cmp-cardlist__cta" href="${card.ctaLink @ extension='html'}"
+           data-sly-test="${card.ctaLink && card.ctaLabel}">
+            ${card.ctaLabel}
+        </a>
+    </div>
+</div>
