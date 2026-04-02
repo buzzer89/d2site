@@ -17,6 +17,14 @@ public class ColumnControlModel {
     @Default(values = "2")
     private String layout;
 
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    @Default(values = "none")
+    private String columnPadding;
+
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    @Default(values = "none")
+    private String columnGap;
+
     public int getColumnCount() {
         try {
             int count = Integer.parseInt(layout);
@@ -36,10 +44,25 @@ public class ColumnControlModel {
     }
 
     public String getCssClass() {
-        return "cmp-columncontrol cmp-columncontrol--" + getColumnCount() + "col";
+        StringBuilder cls = new StringBuilder("cmp-columncontrol cmp-columncontrol--" + getColumnCount() + "col");
+        if (columnPadding != null && !"none".equals(columnPadding)) {
+            cls.append(" cmp-columncontrol--padding-").append(columnPadding);
+        }
+        if (columnGap != null && !"none".equals(columnGap)) {
+            cls.append(" cmp-columncontrol--gap-").append(columnGap);
+        }
+        return cls.toString();
     }
 
     public String getLayout() {
         return layout;
+    }
+
+    public String getColumnPadding() {
+        return columnPadding;
+    }
+
+    public String getColumnGap() {
+        return columnGap;
     }
 }

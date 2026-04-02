@@ -58,3 +58,28 @@
         max-width: 100%;
     }
 }
+
+/* --- Column Padding Utilities --- */
+.cmp-columncontrol--padding-small > .cmp-columncontrol__column {
+    padding: 8px;
+}
+.cmp-columncontrol--padding-medium > .cmp-columncontrol__column {
+    padding: 16px;
+}
+.cmp-columncontrol--padding-large > .cmp-columncontrol__column {
+    padding: 24px;
+}
+
+/* --- Column Gap Utilities --- */
+.cmp-columncontrol--gap-small {
+    gap: 8px;
+    margin: 0;
+}
+.cmp-columncontrol--gap-medium {
+    gap: 16px;
+    margin: 0;
+}
+.cmp-columncontrol--gap-large {
+    gap: 24px;
+    margin: 0;
+}
