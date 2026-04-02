@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Agent Test - FAQ Accordion"
+        cq:template="/conf/d2site/settings/wcm/templates/page-content"
+        sling:resourceType="d2site/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="d2site/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="d2site/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="d2site/components/container"
+                    layout="responsiveGrid">
+
+                    <!-- Instance 1: Full FAQ with multiple Q&A pairs -->
+                    <faqaccordion_full
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/faqaccordion">
+                        <items jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                question="What is Adobe Experience Manager?"
+                                answer="&lt;p&gt;Adobe Experience Manager (AEM) is a comprehensive content management solution for building websites, mobile apps, and forms.&lt;/p&gt;"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                question="How do I create a component in AEM?"
+                                answer="&lt;p&gt;You create a component by defining a &lt;code&gt;.content.xml&lt;/code&gt; under &lt;code&gt;/apps/&lt;/code&gt;, an HTL template, a dialog, and optionally a Sling Model.&lt;/p&gt;"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                question="What is Sling?"
+                                answer="&lt;p&gt;Apache Sling is a web framework that uses a Java Content Repository (JCR) for storage and resolves HTTP requests to content resources.&lt;/p&gt;"/>
+                        </items>
+                    </faqaccordion_full>
+
+                    <!-- Instance 2: Empty FAQ (edge case) -->
+                    <faqaccordion_empty
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/faqaccordion"/>
+
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

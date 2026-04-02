@@ -1,0 +1,127 @@
+/* ==========================================================================
+   FAQ Accordion Component
+   BEM: .cmp-faqaccordion
+   Breakpoints: 768px (phone), 1200px (tablet)
+   ========================================================================== */
+
+.cmp-faqaccordion {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 0;
+}
+
+/* --- Actions (Expand/Collapse All) --- */
+.cmp-faqaccordion__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.cmp-faqaccordion__expand-all,
+.cmp-faqaccordion__collapse-all {
+    background: none;
+    border: 1px solid #6e6e6e;
+    border-radius: 4px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.cmp-faqaccordion__expand-all:hover,
+.cmp-faqaccordion__collapse-all:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Item --- */
+.cmp-faqaccordion__item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cmp-faqaccordion__item:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* --- Question (Button) --- */
+.cmp-faqaccordion__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    transition: background-color 0.2s ease;
+}
+
+.cmp-faqaccordion__question:hover {
+    background-color: #fafafa;
+}
+
+.cmp-faqaccordion__question--expanded {
+    background-color: #f5f5f5;
+}
+
+/* --- Icon (chevron) --- */
+.cmp-faqaccordion__icon {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    margin-left: 16px;
+    border-right: 2px solid #555;
+    border-bottom: 2px solid #555;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.cmp-faqaccordion__question--expanded .cmp-faqaccordion__icon {
+    transform: rotate(-135deg);
+}
+
+/* --- Answer (Panel) --- */
+.cmp-faqaccordion__answer {
+    padding: 0 16px 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.cmp-faqaccordion__answer--hidden {
+    display: none;
+}
+
+/* --- Responsive: Phone --- */
+@media (max-width: 768px) {
+    .cmp-faqaccordion {
+        padding: 8px 0;
+    }
+
+    .cmp-faqaccordion__question {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .cmp-faqaccordion__answer {
+        padding: 0 12px 12px;
+        font-size: 14px;
+    }
+
+    .cmp-faqaccordion__actions {
+        justify-content: center;
+    }
+}
+
+/* --- Responsive: Tablet --- */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .cmp-faqaccordion {
+        max-width: 100%;
+        padding: 12px 16px;
+    }
+}
