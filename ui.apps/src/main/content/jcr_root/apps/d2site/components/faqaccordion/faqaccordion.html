@@ -1,0 +1,30 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='d2site.faqaccordion'}"/>
+    <sly data-sly-call="${clientlib.js @ categories='d2site.faqaccordion'}"/>
+</sly>
+<div data-cmp-is="faqaccordion"
+     data-sly-use.model="com.d2.core.models.FaqAccordionModel"
+     data-sly-test="${model.items}"
+     class="cmp-faqaccordion">
+    <div class="cmp-faqaccordion__actions">
+        <button class="cmp-faqaccordion__expand-all" type="button">Expand All</button>
+        <button class="cmp-faqaccordion__collapse-all" type="button">Collapse All</button>
+    </div>
+    <div class="cmp-faqaccordion__list" data-sly-list.item="${model.items}">
+        <div class="cmp-faqaccordion__item">
+            <button class="cmp-faqaccordion__question" type="button"
+                    aria-expanded="false"
+                    aria-controls="faq-panel-${itemList.index}"
+                    id="faq-header-${itemList.index}">
+                <span class="cmp-faqaccordion__question-text">${item.question}</span>
+                <span class="cmp-faqaccordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="cmp-faqaccordion__answer cmp-faqaccordion__answer--hidden"
+                 id="faq-panel-${itemList.index}"
+                 role="region"
+                 aria-labelledby="faq-header-${itemList.index}">
+                ${item.answer @ context='html'}
+            </div>
+        </div>
+    </div>
+</div>
