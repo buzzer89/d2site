@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.d2.core.services.impl.SitemapServiceImpl" immediate="true" activate="activate">
-  <property name="externalDomain" type="String" value="http://localhost:4503"/>
-  <property name="includeUnpublished" type="Boolean" value="false"/>
-  <service>
-    <provide interface="com.d2.core.services.SitemapService"/>
-  </service>
-  <implementation class="com.d2.core.services.impl.SitemapServiceImpl"/>
-</scr:component>
