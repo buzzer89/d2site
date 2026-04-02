@@ -2,3 +2,7 @@
 node_modules/
 node/
 target/
+.agent/
+.mcp.json
+.github/
+**/dist/*
