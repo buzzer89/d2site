@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Agent Test - Testimonial Carousel"
+        cq:template="/conf/d2site/settings/wcm/templates/page-content"
+        sling:resourceType="d2site/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="d2site/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="d2site/components/container">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="d2site/components/container"
+                    layout="responsiveGrid">
+
+                    <!-- Instance 1: Multiple testimonials (happy path) -->
+                    <testimonialcarousel_full
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/testimonialcarousel">
+                        <items jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                authorPhoto="/content/dam/d2site/placeholder.png"
+                                quoteText="This product has transformed our business. The results speak for themselves."
+                                authorName="Jane Smith"
+                                designation="CEO, TechCorp"/>
+                            <item1
+                                jcr:primaryType="nt:unstructured"
+                                authorPhoto="/content/dam/d2site/placeholder.png"
+                                quoteText="Outstanding service and support. Highly recommended to everyone."
+                                authorName="John Doe"
+                                designation="CTO, Innovate Inc"/>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                quoteText="A testimonial without a photo but still powerful."
+                                authorName="Bob Johnson"/>
+                        </items>
+                    </testimonialcarousel_full>
+
+                    <!-- Instance 2: Single testimonial (nav hidden) -->
+                    <testimonialcarousel_single
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/testimonialcarousel">
+                        <items jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                authorPhoto="/content/dam/d2site/placeholder.png"
+                                quoteText="Only one testimonial here. Navigation should be hidden."
+                                authorName="Alice Williams"
+                                designation="Designer"/>
+                        </items>
+                    </testimonialcarousel_single>
+
+                    <!-- Instance 3: Empty (renders nothing) -->
+                    <testimonialcarousel_empty
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="d2site/components/testimonialcarousel"/>
+
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
